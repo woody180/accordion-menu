@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .accordion-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .accordion-menu li.open > ul {
+            display: block;
+        }
+        .accordion-menu li > ul {
+            /* position: absolute; */
+            display: none;
+            height: 0;
+            overflow: hidden;
+            transition: height 350ms ease-in-out;
+            margin-left: 25px;
+        }
+        .accordion-menu ul.is-visible {
+            display: block;
+            /* height: auto; */
+        }
+        .accordion-menu li {
+            border-bottom: 1px solid rgba(194, 194, 194, 0.333);
+            position: relative;
+            overflow: hidden;
+            transition: all .4s ease;
+        }
+        .accordion-menu li:last-child {
+            border: none;
+        }
+        .accordion-menu li::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .accordion-menu li > a > svg {
+            display: block;
+            position: relative;
+            fill: rgb(48, 48, 48);
+            width: 10px;
+            float: right;
+            transition: all .3s ease;
+        }
+        .accordion-menu li.open > a > svg {
+            transform: rotate(90deg);
+        }
+        .accordion-menu a {
+            background-color: aliceblue;
+            padding: 7px 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+        }
+        .accordion-menu * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="accordion-menu col-menu">
+            <ul>
+                <li><a href="#">some link</a></li>    
+                <li><a href="#">some link</a></li>    
+                <li><a href="#">some link</a>
+                    <ul>
+                        <li><a href="#">some link</a></li>    
+                        <li><a href="#">some link</a></li>    
+                        <li><a href="#">some link</a>
+                            <ul>
+                                <li><a href="#">some link</a></li>    
+                                <li><a href="#">some link</a></li>    
+                                <li><a href="#">some link</a></li>    
+                            </ul>
+                        </li>    
+                        <li><a href="#">some link</a>
+                            <ul>
+                                <li><a href="#">some link</a></li>    
+                                <li><a href="#">some link</a>
+                                    <ul>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                        <li><a href="#">some link</a></li>
+                                    </ul>
+                                </li>    
+                                <li><a href="#">some link</a></li>    
+                            </ul>
+                        </li>    
+                        <li><a href="#">some link</a></li>    
+                    </ul>
+                </li>
+                <li><a href="#">some link</a></li>    
+                <li><a href="#">some link</a>
+                    <ul>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                        <li><a href="#">some link</a></li>
+                    </ul>
+                </li>    
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="js/accordion-menu.js"></script>
+    <script>
+        new CollapseMenu('.col-menu');
+    </script>
+</body>
+</html>

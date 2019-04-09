@@ -1,4 +1,4 @@
-let CollapseMenu = function(selector) {
+let AccordionMenu = function(selector) {
     this.colMenu = document.querySelectorAll(`${selector} li`);
     let This = this;
     this.colMenu.forEach(function(items) {
@@ -21,7 +21,7 @@ let CollapseMenu = function(selector) {
 }
 
 // Show an element
-CollapseMenu.prototype.show = function(elem) {
+AccordionMenu.prototype.show = function(elem) {
     // Get the natural height of the element
     var getHeight = function() {
         elem.style.display = 'block'; // Make it visible
@@ -38,7 +38,7 @@ CollapseMenu.prototype.show = function(elem) {
 };
 
 // Hide an element
-CollapseMenu.prototype.hide = function(elem) {
+AccordionMenu.prototype.hide = function(elem) {
     // Give the element a height to change from
     elem.style.height = elem.scrollHeight + 'px';
 
